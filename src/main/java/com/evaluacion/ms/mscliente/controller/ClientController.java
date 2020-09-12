@@ -22,8 +22,9 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
     
-    @ApiOperation("Get a summary of person data")
+    @ApiOperation("Get client detail")
     @ApiResponses({
+    	@ApiResponse(code = 200, message = "OK"),
     	@ApiResponse(code = 404, message = "Resource not found"),
         @ApiResponse(code = 500, message = "Internal server error")
     })
@@ -35,6 +36,8 @@ public class ClientController {
     
     @ApiOperation("Save client")
     @ApiResponses({
+    	@ApiResponse(code = 200, message = "OK"),
+    	@ApiResponse(code = 404, message = "Resource not found"),
         @ApiResponse(code = 500, message = "Internal server error")
     })
     @PostMapping(path = "/client/register", produces = MediaType.APPLICATION_JSON_VALUE)

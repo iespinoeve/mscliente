@@ -23,7 +23,8 @@ import lombok.ToString;
 
 public class ClienteCompletoDto {
 	
-	private long id;
+	private String id;
+//	private long id;
 	
 	private Date created;
 	
@@ -31,9 +32,9 @@ public class ClienteCompletoDto {
 	
 	private Date last_login;
 	
-	private boolean isactive;
+	private Boolean isactive;
 	
-    private long clientId;
+    private Long clientId;
     
     private String name;
     

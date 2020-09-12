@@ -6,7 +6,7 @@ public interface ClienteService {
 	
 	ClienteCompletoDto obtenerCliente(long clienteId);
 
-	void saveCliente(long clienteId, ClienteCompletoDto cliente);
+	void saveCliente(Long clienteId, ClienteCompletoDto cliente);
 
 
 }

@@ -23,23 +23,26 @@ public class ClienteController {
 	@Autowired
     private ClienteService clienteService;
 	
-    @ApiOperation("Get detailed person data. Only for clients.")
+    @ApiOperation("Get detail for clients.")
     @ApiResponses({
-        @ApiResponse(code = 409, message = "Business error"),
+    	@ApiResponse(code = 200, message = "OK"),
+    	@ApiResponse(code = 404, message = "Resource not found"),
         @ApiResponse(code = 500, message = "Internal server error")
     })
     @GetMapping(path = "/cliente/detalle/{clientId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ClienteCompletoDto obtenerCliente(
-            @ApiParam(name="clientId", value="Id of client", example = "123") @PathVariable("clientId") long clientId) {
+            @ApiParam(name="clientId", value="Id of client", example = "123") @PathVariable("clientId") Long clientId) {
         return clienteService.obtenerCliente(clientId);
     }
     
     @ApiOperation("Save preferences of person")
     @ApiResponses({
+    	@ApiResponse(code = 200, message = "OK"),
+    	@ApiResponse(code = 404, message = "Resource not found"),
         @ApiResponse(code = 500, message = "Internal server error")
     })
     @PostMapping(path = "/cliente/registrar")
-    public void saveCliente(long clientId, @RequestBody ClienteCompletoDto cliente) {
+    public void saveCliente(Long clientId, @RequestBody ClienteCompletoDto cliente) {
     	clienteService.saveCliente(clientId, cliente);
     }
     

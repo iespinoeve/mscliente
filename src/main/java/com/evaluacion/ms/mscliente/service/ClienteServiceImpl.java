@@ -31,7 +31,7 @@ public class ClienteServiceImpl implements ClienteService {
 		    response.setCreated(clienteModel.getCreated());
 		    response.setModified(clienteModel.getModified());
 		    response.setLast_login(clienteModel.getLast_login());
-			response.setIsactive(clienteModel.isIsactive());
+			response.setIsactive(clienteModel.getIsactive());
 	    }
 	    
 	    return response;
@@ -39,7 +39,7 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public void saveCliente(long clienteId, ClienteCompletoDto cliente) {
+	public void saveCliente(Long clienteId, ClienteCompletoDto cliente) {
 
 		ClienteModel model = clienteRepository.findByClientId(clienteId);
 		
@@ -54,7 +54,7 @@ public class ClienteServiceImpl implements ClienteService {
 		    model.setIsactive(true);
 		}
 		else {
-		    model.setIsactive(cliente.isIsactive());
+		    model.setIsactive(cliente.getIsactive());
 		}
 
 		    

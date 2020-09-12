@@ -11,10 +11,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ClienteModel {
 
 	@Id
-	private long id;
+	private String id;
+//	private long id;
 	
 	@Indexed(unique=true)
-    private long clientId;
+    private Long clientId;
     
     private String name;
     
@@ -30,21 +31,21 @@ public class ClienteModel {
 	
 	private Date last_login;
 	
-	private boolean isactive;
+	private Boolean isactive;
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public long getClientId() {
+	public Long getClientId() {
 		return clientId;
 	}
 
-	public void setClientId(long clientId) {
+	public void setClientId(Long clientId) {
 		this.clientId = clientId;
 	}
 
@@ -104,14 +105,16 @@ public class ClienteModel {
 		this.last_login = last_login;
 	}
 
-	public boolean isIsactive() {
+	public Boolean getIsactive() {
 		return isactive;
 	}
 
-	public void setIsactive(boolean isactive) {
+	public void setIsactive(Boolean isactive) {
 		this.isactive = isactive;
 	}
 	
+	
+
 	
 	
 }
